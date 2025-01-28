@@ -63,6 +63,19 @@ echo "</br>";
 
 // redondear un numero float o que contenga decimales con round()
 echo round(10.14);
+echo "</br>";
+
+
+
+// Formatear cantidades monetarias con number_format() 
+$cantidad_1 = 1212133212.11; 
+$cantidad_2 = 1212133212.11; 
+
+// number_format($cantidad_1,2);  semaparador de millares con comas , 
+
+
+echo number_format($cantidad_1,2);
+echo "</br>"; 
 
 
 ?>
