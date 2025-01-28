@@ -39,11 +39,13 @@ echo "</br>";
 
 echo pow(5,3);
 
-// para calcular la raiz cuadrada de un numero
+// para calcular la raiz cuadrada de un numero sqrt
 
 echo sqrt(25);
 
+// para calcular un numero randow desde un numero minimo a un numero maximo 
 
+echo rand(1,1000);
 
 
 
