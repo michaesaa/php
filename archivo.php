@@ -14,7 +14,7 @@
 <body>
     <h1>subir archivo</h1>
     <form action="carga.php" method="POST" enctype="multipart/form-data">
-        <input type="file" name="fichero">
+        <input type="file" name="fichero"  accept=".jpg, .png , .jpeg ">
         <button type="submit">Cargar archivo</button>
     </form>
 </body>
