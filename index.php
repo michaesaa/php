@@ -7,6 +7,7 @@ session_id("ph");
 session_start();
 
 $_SESSION['sesiones'] = 1;
+$_SESSION['usuario']=='Carlos';
 
 if(isset($_SESSION['sesiones'])){
     $_SESSION['sesiones'] ++;
@@ -14,9 +15,6 @@ if(isset($_SESSION['sesiones'])){
 }else{
     $_SESSION['sesiones'] = 1;
 }
-
-
-
 
 
 ?>
@@ -29,8 +27,13 @@ if(isset($_SESSION['sesiones'])){
     <title>Document</title>
 </head>
 <body>
-    <?php echo "as recargado".$_SESSION['sesiones']; ?>
-<?php echo "esta es la sesion de ".$_SESSION['sesiones']."numer"; ?>
+    <form action="login.php" method="POST">
+        <label for="">Usuario</label>
+        <input type="text" name="usuario">
+        <br>
+        <label for="">Contraseña</label><input type="password" name="contraseña"></label>
 
+
+    </form>
 </body>
 </html>
