@@ -2,7 +2,7 @@
 
 include "funciones.php";
 
-echo "el promedio es:".promedio_alumno(3,3,10);
+echo "el promedio es:" . promedio_alumno(3, 3, 10);
 
 
 
@@ -11,10 +11,23 @@ $cadena_texto = "hola mundoo";
 
 $longitud = strLen($cadena_texto);
 
-echo "la paralbra tiene x caracteres".$longitud;
+echo "la paralbra tiene x caracteres" . $longitud;
 
 // para contar palabras 
 $palabra = str_word_count($cadena_texto);
-echo "tiene x cantidad de :".$palabra;
+echo "tiene x cantidad de :" . $palabra; 
+echo "</br>";
+
+
+// convertir un estring en un array apartir de un limitador 
+
+$fecha_1 = "2021/11/4";
+$fecha_2 = "2031/11/4";
+$fecha_3 = "2021/4/4";
+
+
+$array = explode("/", $fecha_1);
+
+echo $array[1];
 
 ?>
