@@ -1,7 +1,9 @@
 <!-- las cookies se escriben antes del codigo html -->
 
 <?php
-   setcookie( "Idioma", "Espanol", time() ); 
+// despues de crada podemos determinar el tiempo que va permanecer
+//  creada la cooki con time()+60+60*24*30) asi es para un mes
+   setcookie( "Idioma", "Espanol", time()+60+60*24*30); 
    
    
 //    setcookie(nombre , valor ,espiracion , dir , dominio, secure ,httponly]);  
