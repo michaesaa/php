@@ -47,6 +47,10 @@ echo sqrt(25);
 
 echo rand(1,1000);
 
+// obtener el numero de pi 
+
+echo pi();
+
 
 
 
