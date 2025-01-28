@@ -38,20 +38,31 @@ echo "</br>";
 // multiplicar 5 veces 5
 
 echo pow(5,3);
+echo "</br>";
 
 // para calcular la raiz cuadrada de un numero sqrt
 
 echo sqrt(25);
+echo "</br>";
 
 // para calcular un numero randow desde un numero minimo a un numero maximo 
 
 echo rand(1,1000);
+echo "</br>";
 
 // obtener el numero de pi 
 
 echo pi();
+echo "</br>";
 
+// redonde un numero a un entero depende de la fraciones que tenga 
+echo floor(4.3);
+echo "</br>";
+echo ceil(4.3);
+echo "</br>";
 
+// redondear un numero float o que contenga decimales con round()
+echo round(10.14);
 
 
 ?>
