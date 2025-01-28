@@ -8,7 +8,7 @@
 // ESAMOS EN EL DOMINIO LOCALHOST
 
 
-// para metro secure  protocolo seguro con https si esta es false siempre se va a crea 
+// para metro secure  protocolo seguro con https si esta es false siempre se va a crea la cookie 
 // sea o no segura la pagina  
 
 // el paramatro httponly es para que no se pueda ver en el navegador si es 
