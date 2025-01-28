@@ -23,6 +23,21 @@
 
 // validar si el directorio exixte 
 
+
+// para declarar el tipo de contenido de mine type
+if(mime_content_type($_FILES['fichero']['tmp_name'])!="image/jpg" && 
+mime_content_type($_FILES['fichero']['tmp_name'])!="image/png")
+{
+echo "El archivo no es una imagen";
+exit();
+}
+
+
+
+
+
+
+
 if(!file_exists('archivo/')) {
     if(!mkdir('archivo/',0077)) {
         echo "Error al crear el directorio";
