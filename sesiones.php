@@ -2,16 +2,20 @@
 //  creamos sesiones para login 
 // son archivos que se alojan en el servidor 
 
+
+session_start();
+
 // se guarda el id de la session por medio de una cokki para conectar con el servidor
 
 
-// colacarle nombre a la session con session_name
-session_name("con");
 
-// colocarle id
-session_id("ph");
 
-session_start();
+
+// crear variable de session 
+$_SESSION['sesiones'] = "javier";
+
+
+
 
 ?>
 
@@ -24,7 +28,8 @@ session_start();
 </head>
 <body>
     <h1>session</h1>
-    <?php echo session_id(); ?>
+    <br>
+    <?php echo "esta es la sesion de ".$_SESSION['sesiones']."numer"; ?>
     <br>
     <a href="index.php">Inicio</a>
     <br>
