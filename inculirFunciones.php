@@ -39,6 +39,12 @@ echo "</br>";
 
 echo pow(5,3);
 
+// para calcular la raiz cuadrada de un numero
+
+echo sqrt(25);
+
+
+
 
 
 
