@@ -78,4 +78,17 @@ echo number_format($cantidad_1,2);
 echo "</br>"; 
 
 
+// obtener fecha en tiempo actual en eeuu english 
+// primero de determina la zona horaria 
+// pagina para ver la zona horaria 
+// https://www.php.net/manual/es/function.date-default-timezone-set.php
+
+date_default_timezone_set("America/El_Salvador"); 
+echo date("D M d Y h:i:s A");
+echo "</br>";
+
+
+
+
+
 ?>
