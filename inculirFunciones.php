@@ -29,5 +29,17 @@ $fecha_3 = "2021/4/4";
 $array = explode("/", $fecha_1);
 
 echo $array[1];
+echo "</br>";
+
+// funciones matematicas predefinidas 
+
+// elevar la base de un exponente 
+
+// multiplicar 5 veces 5
+
+echo pow(5,3);
+
+
+
 
 ?>
