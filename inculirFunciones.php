@@ -78,7 +78,7 @@ echo number_format($cantidad_1,2);
 echo "</br>"; 
 
 
-// obtener fecha en tiempo actual en eeuu english 
+// obtener fecha en tiempo actual en eeuu english  date_default_timezone_set
 // primero de determina la zona horaria 
 // pagina para ver la zona horaria 
 // https://www.php.net/manual/es/function.date-default-timezone-set.php
@@ -87,6 +87,46 @@ date_default_timezone_set("America/El_Salvador");
 echo date("D M d Y h:i:s A");
 echo "</br>";
 
+
+// obtener fecha abtual en español spanish  date_default_timezone_set
+// primero de determina la zona horaria 
+// pagina para ver la zona horaria
+
+date_default_timezone_set("America/El_Salvador");
+
+function fecha_espanol_larga(){
+  $fecha_dia = date("d");
+  $fecha_mes = date("m");
+  $fecha_anio = date("y");
+}
+
+$dia_semana = [ 
+  "monday" => "Lunes",
+  "tuesday" => "Martes",
+  "wednesday" => "Miercoles",
+  "thursday" => "Jueves",     
+  "friday" => "Viernes  ",
+  "saturday" => "Sabado",
+  "sunday" => "Domingo",
+
+];
+
+$meses_year = [
+  "january" => "Enero",
+  "february" => "Febrero",    
+  "march" => "Marzo", 
+  "april" => "Abril",
+  "may" => "Mayo",  
+  "june" => "Junio",
+  "july" => "Julio",
+  "august" => "Agosto",
+  "september" => "Septiembre",  
+  "october" => "Octubre",
+  "november" => "Noviembre",
+  "december" => "Diciembre",
+];
+
+$fecha_final = $fecha_dia ."de".$mses_year[$fecha_mes]."del".$fecha_anio;
 
 
 
