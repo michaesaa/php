@@ -1,7 +1,8 @@
 <?php 
+session_start();
 
 
-if($_POST['usuario']=='Carlos' && $_POST['USUARIO']=="123456"){
+if($_POST['usuario']=='Carlos' && $_POST['clave']=="123456"){
     $_SESSION['nombre']="Carlos";
     $_SESSION['apellido']="los";
     $_SESSION['pais']="brazil";
