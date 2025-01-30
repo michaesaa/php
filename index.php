@@ -25,7 +25,7 @@
   ) {
     include "./inc/navbar.php";
 
-    include "./vistas/".$GET['vista'].".php";
+    include "./vistas/".$_GET['vista'].".php";
 
     include "./inc/script.php";
   } else {
