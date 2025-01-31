@@ -7,6 +7,7 @@ function conexion()
 
 // verificar datos 
 
+
 function verificar_datos($filtro, $cadena)
 {
     // la funcion preg_match() devuelve true si la cadena coincide con el filtro, resive dos parametros
@@ -20,38 +21,88 @@ function verificar_datos($filtro, $cadena)
 // funcion para limpiar cadenas de texto para evitar inyecciones sql 
 // para los formularios 
 
-function limpiar_cadena($cadena){
+function limpiar_cadena($cadena)
+{
     // sirve para eliminar espacion en blanco al inicio y final de la cadena
-    $cadena=trim($cadena);
+    $cadena = trim($cadena);
     // sirve para eliminar las barras invertidas
-    $cadena=stripslashes($cadena);
+    $cadena = stripslashes($cadena);
     // sirve para para remplzar caracteres en nuestra cadena
-    $cadena=str_ireplace("<script>","",$cadena);
-    $cadena=str_ireplace("</script>","",$cadena);
-    $cadena=str_ireplace("</script src","",$cadena);
-    $cadena=str_ireplace("</script type=","",$cadena);
-    $cadena=str_ireplace("<SELECT * FROM","",$cadena);
-    $cadena=str_ireplace("DELETE FROM","",$cadena);
-    $cadena=str_ireplace("<INSERT INTO","",$cadena);
-    $cadena=str_ireplace("<DROP TABLE","",$cadena);
-    $cadena=str_ireplace("<DROP DATABASE","",$cadena);
-    $cadena=str_ireplace("<TRUNCATE TABLE","",$cadena);
-    $cadena=trim($cadena);
-    $cadena=stripslashes($cadena);
+    $cadena = str_ireplace("<script>", "", $cadena);
+    $cadena = str_ireplace("</script>", "", $cadena);
+    $cadena = str_ireplace("</script src", "", $cadena);
+    $cadena = str_ireplace("</script type=", "", $cadena);
+    $cadena = str_ireplace("<SELECT * FROM", "", $cadena);
+    $cadena = str_ireplace("DELETE FROM", "", $cadena);
+    $cadena = str_ireplace("<INSERT INTO", "", $cadena);
+    $cadena = str_ireplace("<DROP TABLE", "", $cadena);
+    $cadena = str_ireplace("<DROP DATABASE", "", $cadena);
+    $cadena = str_ireplace("<TRUNCATE TABLE", "", $cadena);
+    $cadena = trim($cadena);
+    $cadena = stripslashes($cadena);
     return $cadena;
 }
 
 // funciones para renombrar nombre de las fotos 
 
-function renombrar_fotos($nombre){
-    $nombre =str_ireplace(" ","_",$nombre);
-    $nombre =str_ireplace("/","_",$nombre);
-    $nombre =str_ireplace("#","_",$nombre);
-    $nombre =str_ireplace(".","_",$nombre);
-    $nombre =str_ireplace(",","_",$nombre);
-    $nombre=$nombre."_".rand(0,100);
+function renombrar_fotos($nombre)
+{
+    $nombre = str_ireplace(" ", "_", $nombre);
+    $nombre = str_ireplace("/", "_", $nombre);
+    $nombre = str_ireplace("#", "_", $nombre);
+    $nombre = str_ireplace(".", "_", $nombre);
+    $nombre = str_ireplace(",", "_", $nombre);
+    $nombre = $nombre . "_" . rand(0, 100);
     return $nombre;
 }
-    $foto="play de pelicula goku sayayin 4 /edito";
-    echo renombrar_fotos($foto);
+
+
+// funcion para paginador de tablas 
+// condicion de es menor o es 1 nomuestre el boton el cual va a aparecer como is_disable  disable
+
+function paginador_tablas($pagina, $Npaginas, $url, $botones)
+{
+    $tabla = '<nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">';
+
+    if ($pagina <= 1) {
+        $tabla = '<a class="pagination-previous is-disable" disabled Anterior</a>
+        <ul class="pagination-list">';
+
+    } else {
+        $tabla = '<a class="pagination-previous" href="'.$url.($pagina-1).'">Anterior</a>
+        <ul class="pagination-list">
+        <li><a class="pagination-link" href="'.$url.'1">1</a></li>
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+        ';
+    }
+
+
+// botn de siguiente
+    function paginador_tablas($pagina, $Npaginas, $url, $botones)
+    {
+        $tabla = '<nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">';
+    
+        if ($pagina <= 1) {
+            $tabla = '<a class="pagination-previous is-disable" disabled Anterior</a>
+            <ul class="pagination-list">';
+    
+        } else {
+            $tabla = '<a class="pagination-previous" href="'.$url.($pagina-1).'">Anterior</a>
+            <ul class="pagination-list">
+            <li><a class="pagination-link" href="'.$url.'1">1</a></li>
+            <li><span class="pagination-ellipsis">&hellip;</span></li>
+            ';
+        }
+    }
+
+
+
+
+
+
+
+
+    $tabla .= '</nav>';
+    return $tabla;
+}
 
