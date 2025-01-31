@@ -41,3 +41,5 @@ function limpiar_cadena($cadena){
     return $cadena;
 }
 
+$texto = "<script> hola </script>";
+echo limpiar_cadena($texto);
