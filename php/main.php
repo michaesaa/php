@@ -1,7 +1,7 @@
 <?php
 function conexion()
 {
-    $pdo = new PDO('mysql:host=localhost;dbname=inventario', 'root', '');
+    $pdo = new PDO('mysql:host=localhost;dbname=inventario', 'root', password: '');
     return $pdo;
 }
 
@@ -41,5 +41,17 @@ function limpiar_cadena($cadena){
     return $cadena;
 }
 
-$texto = "<script> hola </script>";
-echo limpiar_cadena($texto);
+// funciones para renombrar nombre de las fotos 
+
+function renombrar_fotos($nombre){
+    $nombre =str_ireplace(" ","_",$nombre);
+    $nombre =str_ireplace("/","_",$nombre);
+    $nombre =str_ireplace("#","_",$nombre);
+    $nombre =str_ireplace(".","_",$nombre);
+    $nombre =str_ireplace(",","_",$nombre);
+    $nombre=$nombre."_".rand(0,100);
+    return $nombre;
+}
+    $foto="play de pelicula goku sayayin 4 /edito";
+    echo renombrar_fotos($foto);
+
