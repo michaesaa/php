@@ -65,34 +65,31 @@ function paginador_tablas($pagina, $Npaginas, $url, $botones)
     $tabla = '<nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">';
 
     if ($pagina <= 1) {
-        $tabla = '<a class="pagination-previous is-disable" disabled Anterior</a>
+        $tabla .= '<a class="pagination-previous is-disable" disabled Anterior</a>
         <ul class="pagination-list">';
 
     } else {
-        $tabla = '<a class="pagination-previous" href="'.$url.($pagina-1).'">Anterior</a>
+        $tabla .= '<a class="pagination-previous" href="' . $url . ($pagina - 1) . '">Anterior</a>
         <ul class="pagination-list">
-        <li><a class="pagination-link" href="'.$url.'1">1</a></li>
+        <li><a class="pagination-link" href="' . $url . '1">1</a></li>
         <li><span class="pagination-ellipsis">&hellip;</span></li>
         ';
     }
 
+    // boton de siguiente
+    if ($pagina == $Npaginas) {
+        $tabla .= '
+        </ul>
+        <a class="pagination-next" is-disabled" disabled >Siguiente</a>
+        ';
+    } else {
+        $tabla .= ' 
+        <li><span class="pagination-ellipsis">&hellip;</span></li>
+        <li><a class="pagination-link" href="'.$url.$Npaginas.'">'.$Npaginas.'</a></li>
+	
 
-// botn de siguiente
-    function paginador_tablas($pagina, $Npaginas, $url, $botones)
-    {
-        $tabla = '<nav class="pagination is-centered is-rounded" role="navigation" aria-label="pagination">';
-    
-        if ($pagina <= 1) {
-            $tabla = '<a class="pagination-previous is-disable" disabled Anterior</a>
-            <ul class="pagination-list">';
-    
-        } else {
-            $tabla = '<a class="pagination-previous" href="'.$url.($pagina-1).'">Anterior</a>
-            <ul class="pagination-list">
-            <li><a class="pagination-link" href="'.$url.'1">1</a></li>
-            <li><span class="pagination-ellipsis">&hellip;</span></li>
-            ';
-        }
+        </ul>
+        <a class="pagination-next" href="' . $url . ($pagina + 1) . '">Siguiente</a>';
     }
 
 
