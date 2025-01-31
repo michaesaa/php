@@ -1,10 +1,8 @@
 <nav class="navbar" role="navigation" aria-label="main navigation
   <div class=" navbar-brand">
-    <a class="navbar-item" href="">
-        <img width="65" height="28" src="./img/png.png">
-           
+    <a class="navbar-item" href="index.php?vista=home">
+        <img width="65" height="28" src="./img/png.png">  
         </img>
-
     </a>
 
     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
