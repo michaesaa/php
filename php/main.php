@@ -1,7 +1,24 @@
-<?php 
+<?php
+function conexion()
+{
+    $pdo = new PDO('mysql:host=localhost;dbname=inventario', 'root', '');
+    return $pdo;
+}
 
-$pdo = new PDO('mysql:host=localhost;dbname=inventario', 'root', '');
+// verificar datos 
 
-$pdo->query("INSERT INTO categoria(categoria_nombre,categoria_ubicacion) VALUES('Computadoras','Oficina')");
+function verificar_datos($filtro, $cadena)
+{
+    // la funcion preg_match() devuelve true si la cadena coincide con el filtro, resive dos parametros
+    if (preg_match("/^" . $filtro . "$/", $cadena)) {
+        return false;
+    } else {
+        return true;
+    }
+}
 
-?>
+$nombre="michael66";
+if(verificar_datos("[a-zA-Z]{4,10}",$nombre)){
+    echo "el nombre no cumple el filtro ";
+}
+
